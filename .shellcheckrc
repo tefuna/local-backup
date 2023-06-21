@@ -1,0 +1,3 @@
+disable=SC2046,SC2164,SC3030,SC3054
+source=/dev/null
+shell=sh
