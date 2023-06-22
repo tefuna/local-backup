@@ -20,7 +20,7 @@ for backup in "${BACKUPS[@]}"; do
     # shellcheck disable=SC2086
     set -- ${backup}
 
-    rsync -rptlgo -v --log-file="${LOG_NAME}" "${1}" "${2}"
+    rsync -a --delete -v --log-file="${LOG_NAME}" "${1}" "${2}"
     ret=${?}
     if [ ${ret} -ne 0 ]; then
         echo "rsync failed: ret=${ret}, src=${1}, dst=${2}"
